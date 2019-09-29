@@ -15,7 +15,7 @@ Vue.use(VueRouter);
 export default new VueRouter({
     routes: [
         {path:"/", component: Login, name: 'Login'},
-        {path: "/home", component: Home, name: 'Home', children: [
+        {path: "/home", component: Home, name: 'Home', redirect: Users, children: [
                 {path: "/users", component: Users, name: 'Users'}
             ]}
     ],
