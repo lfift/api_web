@@ -16,7 +16,7 @@
         </el-header>
         <el-container>
             <el-aside width="200px">
-                <el-menu :router="true" default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+                <el-menu :collapse="isCollapse" :router="true" default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
                     <el-submenu index="1">
                         <template slot="title">
                             <i class="el-icon-location"></i>
@@ -50,6 +50,11 @@
 <script>
     export default {
         name: "Home",
+        data() {
+            return {
+                isCollapse: "true"
+            }
+        },
         methods: {
             handleOpen(key, keyPath) {
                 console.log(key + "==" + keyPath);
