@@ -11,6 +11,7 @@ Axios.defaults.baseURL = "http://127.0.0.1";
 Vue.use(VueAxios, Axios);
 Vue.use(ElementUI);
 
+
 new Vue({
   router: routes,
   render: h => h(App)
