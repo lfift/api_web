@@ -1,5 +1,5 @@
 <template>
-    <el-menu :collapse="true" :router="true" :default-active="$route.path" class="el-menu-vertical-demo" 
+    <el-menu :collapse="false" :router="true" :default-active="$route.path" class="el-menu-vertical-demo" 
         @open="handleOpen" @close="handleClose">
         <div class="logo">
             <h1>Vue Test</h1>

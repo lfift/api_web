@@ -21,5 +21,5 @@ export default new VueRouter({
                 {path: "/users", component: Users, name: 'Users'}
             ]}
     ],
-    mode: 'hash'
+    mode: 'history'
 });
