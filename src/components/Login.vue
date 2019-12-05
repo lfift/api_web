@@ -50,7 +50,7 @@
         methods: {
             login() {
                 if (this.loginForm.username == "admin" && this.loginForm.password == "admin") {
-                    this.$router.push("/home");
+                    this.$router.push("/index");
                 } else {
                     this.$message.error("用户名或密码不正确！");
                 }
