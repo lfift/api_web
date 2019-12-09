@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span>1234123</span>
+        <span>123</span>
         <el-dropdown style="margin-top: 10px;float:right;">
             <el-avatar fit="contain" src="#">
             </el-avatar>
