@@ -1,12 +1,8 @@
 <template>
     <el-container class="fillcontain">
-        <el-aside width="256px">
-            <LeftMenue></LeftMenue>
-        </el-aside>
+        <LeftMenu :isCollapse="isCollapse"></LeftMenu>
         <el-container>
-            <el-header height="64px">
-                <Header></Header>
-            </el-header>
+            <Header @toggleActive="toggleActive($event)"></Header>
             <el-main>
                 <router-view/>
             </el-main>
@@ -18,22 +14,19 @@
 </template>
 <script>
 import Header from "@/components/Header"
-import LeftMenue from "@/components/LeftMenue"
+import LeftMenu from "@/components/LeftMenu"
 import Footer from "@/components/Footer"
     export default {
         name: "Index",
-        components: {Header, LeftMenue, Footer},
+        components: {Header, LeftMenu, Footer},
         data(){
             return {
-                 isCollapse: "true"
+                 isCollapse: false
             }
         },
         methods: {
-            handleOpen(key, keyPath) {
-                window.console.log(key + "==" + keyPath);
-            },
-            handleClose(key, keyPath) {
-                window.console.log(key + "==" + keyPath);
+            toggleActive($event) {
+                this.isCollapse = $event;
             }
         }
     }
@@ -45,11 +38,6 @@ import Footer from "@/components/Footer"
    .el-menu{
        border: none;
    }
-   .el-header{
-       box-shadow: 0 5px 5px #E0E0E0;
-       background-color: #409EFF;
-       padding: 0;
-    }
     .el-footer{
        background-color: #f7fbfd;
        text-align: center;
@@ -57,5 +45,6 @@ import Footer from "@/components/Footer"
    }
    .el-main{
        background-color: #ccc;
+       min-height: 665px;
    }
 </style>

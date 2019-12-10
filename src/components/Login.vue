@@ -57,7 +57,6 @@
             },
             qqLogin() {
                 this.$message.info("QQ登录暂未开通！");
-                this.$notify.info("22");
             },
             weixinLogin() {
                 this.$message.info("微信登录暂未开通！");

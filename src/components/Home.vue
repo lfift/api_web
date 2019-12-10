@@ -7,7 +7,7 @@
         name: "Home",
         data() {
             return {
-                isCollapse: "true"
+                
             }
         },
         methods: {
