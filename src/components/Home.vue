@@ -4,6 +4,10 @@
             <el-option v-for="(item, index) in items" 
             :value="item.value" :key="index" :label="item.label"></el-option>
         </el-select>
+        <el-radio-group v-model="radioValue" ref="radioItem" @change="changeRadio">
+            <el-radio label="111">1</el-radio>
+            <el-radio label="222">2</el-radio>
+        </el-radio-group>
     </div>
 </template>
 
@@ -17,7 +21,8 @@
                     {label: "222", value: "2"},
                     {label: "333", value: "3"}
                 ],
-                itemValue: ""
+                itemValue: "",
+                radioValue: ''
             }
         },
         methods: {
@@ -26,6 +31,12 @@
                 this.$nextTick(() => {
                     window.console.log(this.$refs.item);
                     window.console.log(this.$refs.item.selected.label)
+                });
+            },
+            changeRadio() {
+                this.$nextTick(() => {
+                    window.console.log(this.$refs.radioItem);
+                    window.console.log(this.$refs.radioItem.checked)
                 });
             }
         }
