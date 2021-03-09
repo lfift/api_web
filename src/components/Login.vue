@@ -61,6 +61,9 @@
             weixinLogin() {
                 this.$message.info("微信登录暂未开通！");
             }
+        },
+        created() {
+            
         }
     }
 </script>

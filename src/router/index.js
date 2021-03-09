@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
-// 一级路由
-import Login from "@/components/Login";
 import Index from "@/components/Index"
 
 // 二级路由
@@ -15,7 +13,7 @@ Vue.use(VueRouter);
 
 export default new VueRouter({
     routes: [
-        {path:"/", component: Login, name: 'Login'},
+        {path:"/", component: () => import('@/components/Login'), name: 'Login', meta: {requireAuth: true}},
         {path: "/index", component: Index, name: 'Index', redirect: Home, children: [
                 {path: "/home", component: Home, name: 'Home'},
                 {path: "/users", component: Users, name: 'Users'}
